@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Index page</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/img/favicons/favicon.ico">
+    <link rel="icon" href="/static/img/favicons/base-16x16.png" sizes="16x16">
+    <link rel="icon" href="/static/img/favicons/base-24x24.png" sizes="32x32">
+    <link rel="icon" href="/static/img/favicons/base-32x32.png" sizes="32x32">
+    <link rel="icon" href="/static/img/favicons/base-64x64.png" sizes="64x64">
+
+    <!-- MS -->
+    <meta name="application-name" content="Site name">
+    <meta name="msapplication-TileImage" content="/static/img/favicons/tile.jpg">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <!-- OS X -->
+    <link rel="mask-icon" href="/static/img/favicons/safari-pinned-tab.svg" color="#6961bf">
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="Site name">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicons/apple-touch-icon-180x180.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- og -->
+    <meta property="og:title" content="get from H1" />
+    <meta property="og:description" content="get from meta description" />
+    <meta property="og:image" content="/static/img/favicons/og.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:url" content="https://www.site.ru/" />
+    <meta property="og:locale" content="ru_RU" />
+</head>
+<body>
+    <div class="page-layout">
+        <header class="page-header">
+            <div class="page-header__container">
+                <div class="page-header__logo">
+                    <a href="/" class="logo">
+                        <picture>
+                            <source srcset="/static/img/logo.webp 1x,
+                                            /static/img/logo@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/logo.png"
+                            srcset="/static/img/logo@2x.png 2x"
+                            alt="Test page logo" />
+                        </picture>
+                    </a>
+                </div>
+                <div class="page-header__menu">
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Объекты</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Компания</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Как купить</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Агентам</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Регионам</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Акции</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-header__contacts">
+                    <div class="contacts">
+                        <a href="tel:8888888898" class="contacts__phone">8 888 88 88 98</a>
+                        <button type="button" class="contacts__button">Звони скорее!</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <div class="page-main__header">
+                <h1>Найдено 666 квартир</h1>
+            </div>
+
+            <section class="page-main__body">
+                <div class="sorting">
+                    <span class="sorting__title">
+                        Сортировать по:
+                    </span>
+                    <div class="sorting__handlers">
+                        <button type="button" class="sorting__button">Цене</button>
+                        <button type="button" class="sorting__button">Комнатам</button>
+                    </div>
+                </div>
+
+                <div class="apartments">
+                    <div class="apartments__item">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-17%</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/1.webp 1x,
+                                            /static/img/apartments/1@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/1.png"
+                            srcset="/static/img/apartments/1@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Студия №44</a>
+
+                        <ul class="apartments__details">
+                            <li>без отделки</li>
+                            <li>28 м<sup>2</sup> площадь</li>
+                            <li>12/14 этаж</li>
+                        </ul>
+
+                        <p class="apartments__price">1 900 000 руб.</p>
+
+                        <button type="button" class="apartments__button">Забронировано</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <div class="subscribe">
+                <div class="subscribe__description">
+                    <div class="subscribe__title">
+                        <h3>Успей купить!</h3>
+                    </div>
+                    <div class="subscribe__text">
+                        <p>Подпишись и успей словить все акции</p>
+                    </div>
+                </div>
+
+                <form action="#" class="subscribe__form form">
+
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+</body>
+<!-- Developed by Artur Trifonov frontend-design.ru -->
+</html>
