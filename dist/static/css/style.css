@@ -23,28 +23,32 @@
   font-display: swap; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+  color: #002f2f;
+  font-weight: 700; }
 
 h1 {
-  font-size: 2rem; }
+  font-size: 3rem; }
 
 h2 {
-  font-size: 1.75rem; }
+  font-size: 2.75rem; }
 
 h3 {
-  font-size: 1.5rem; }
+  font-size: 2.5rem; }
 
 h4 {
-  font-size: 1.25rem; }
+  font-size: 2.25rem; }
 
 h5 {
-  font-size: 1rem; }
+  font-size: 2rem; }
 
 h6 {
-  font-size: 0.75rem; }
+  font-size: 1.75rem; }
 
 html,
 body {
+  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0; }
 
@@ -52,6 +56,20 @@ body {
   color: #313639;
   font-family: "Open Sans", sans-serif;
   background-color: rgba(239, 236, 202, 0.3); }
+  body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url(../img/test.png);
+    background-position: 50% 0;
+    opacity: .2;
+    -webkit-filter: sepia(30%);
+    filter: sepia(30%); }
+  body::after {
+    display: none; }
 
 *,
 *::before,
@@ -61,9 +79,95 @@ body {
 ::-moz-focus-inner {
   border: 0; }
 
+a {
+  text-decoration: none;
+  color: #002f2f;
+  transition: color 250ms; }
+  a:hover {
+    color: #ff4444; }
+
 .page-layout {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 100%; }
 
-.page-footer {
-  margin-top: auto; }
+.page-header {
+  padding: 1.3125rem 0 0.875rem;
+  background-color: #002f2f; }
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 110rem;
+  margin: 0 auto; }
+
+.page-header__logo {
+  flex-basis: 6%;
+  margin: 0 1.6875rem; }
+
+.page-header__menu {
+  flex-basis: 0px;
+  flex-grow: 2;
+  margin: 0 1.6875rem; }
+
+.page-header__contacts {
+  flex-basis: 15.17%;
+  margin: 0 1.6875rem; }
+
+.page-main {
+  flex-grow: 2;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto; }
+
+.page-main__header {
+  padding: 3.375rem 6.625rem 2.1875rem; }
+
+.page-main__body {
+  padding: 1.25rem 6.625rem;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.logo {
+  display: block;
+  transition: opacity 250ms; }
+  .logo:hover {
+    opacity: .7; }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.25rem; }
+  @media screen and (min-width: 100em) {
+    .menu {
+      font-size: 1.5rem; } }
+
+.menu__item:not(:last-child) {
+  margin-right: 3rem; }
+
+.menu__link {
+  color: #fefefe; }
+
+.contacts__phone {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: #fefefe;
+  line-height: 1;
+  font-size: 1.75rem; }
+  @media screen and (min-width: 100em) {
+    .contacts__phone {
+      font-size: 2rem; } }
+
+.contacts__button {
+  margin: 0;
+  padding: 0;
+  color: #fefefe;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  transition: color 250ms; }
+  .contacts__button:hover {
+    color: #ff4444; }

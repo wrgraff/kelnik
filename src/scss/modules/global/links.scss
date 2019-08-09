@@ -1,0 +1,9 @@
+a {
+    text-decoration: none;
+    color: color(primary);
+    transition: color 250ms;
+
+    &:hover {
+        color: color(alert);
+    }
+}

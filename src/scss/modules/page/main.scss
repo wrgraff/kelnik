@@ -1,0 +1,15 @@
+.page-main {
+    flex-grow: 2;
+    width: 100%;
+    max-width: rem-calc(1280);
+    margin: 0 auto;
+}
+
+.page-main__header {
+    padding: rem-calc(54 106 35);
+}
+
+.page-main__body {
+    padding: rem-calc(20 106);
+    background-color: rgba(color(white), .9);
+}

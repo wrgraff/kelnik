@@ -1,0 +1,29 @@
+.contacts {
+
+}
+
+.contacts__phone {
+    display: inline-block;
+    margin-bottom: rem-calc(4);
+    color: color(light-gray);
+    line-height: 1;
+
+    font-size: rem-calc(28);
+    @include breakpoint(xxlarge) {
+        font-size: rem-calc(32);
+    }
+}
+
+.contacts__button {
+    margin: 0;
+    padding: 0;
+    color: color(light-gray);
+    font-size: rem-calc(20);
+    background-color: transparent;
+    border: none;
+    transition: color 250ms;
+
+    &:hover {
+        color: color(alert);
+    }
+}
