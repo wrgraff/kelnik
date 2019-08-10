@@ -1,0 +1,48 @@
+.sorting {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: rem-calc(40);
+    font-size: rem-calc(14);
+}
+
+.sorting__title {
+    margin-right: rem-calc(12);
+    color: rgba(color(primary), .7);
+}
+
+.sorting__handlers {
+
+}
+
+.sorting__button {
+    position: relative;
+    margin-right: rem-calc(45);
+    padding: 0;
+    color: color(primary);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted;
+    cursor: pointer;
+    transition: color 250ms;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: rem-calc(18);
+        height: rem-calc(18);
+        margin-left: rem-calc(8);
+        background-color: rgba(color(blue), .04);
+        background-image: url(../img/ico/chevron_up.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        color: color(alert);
+    }
+}

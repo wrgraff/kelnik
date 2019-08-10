@@ -86,6 +86,10 @@ a {
   a:hover {
     color: #ff4444; }
 
+button {
+  font-size: inherit;
+  font-family: "Open Sans", sans-serif; }
+
 .page-layout {
   display: flex;
   flex-direction: column;
@@ -170,4 +174,42 @@ a {
   border: none;
   transition: color 250ms; }
   .contacts__button:hover {
+    color: #ff4444; }
+
+.sorting {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+  font-size: 0.875rem; }
+
+.sorting__title {
+  margin-right: 0.75rem;
+  color: rgba(0, 47, 47, 0.7); }
+
+.sorting__button {
+  position: relative;
+  margin-right: 2.8125rem;
+  padding: 0;
+  color: #002f2f;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted;
+  cursor: pointer;
+  transition: color 250ms; }
+  .sorting__button::before {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-left: 0.5rem;
+    background-color: rgba(4, 99, 128, 0.04);
+    background-image: url(../img/ico/chevron_up.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%; }
+  .sorting__button:hover {
     color: #ff4444; }
