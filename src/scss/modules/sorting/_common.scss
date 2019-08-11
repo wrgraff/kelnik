@@ -3,13 +3,27 @@
     align-items: baseline;
     max-width: rem-calc(1120);
     margin: 0 auto rem-calc(40);
-    padding: rem-calc(0 27);
     font-size: rem-calc(14);
+
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding-left: $size / 2;
+            padding-right: $size / 2;
+        }
+    }
+
+    @include breakpoint(small down) {
+        flex-direction: column;
+    }
 }
 
 .sorting__title {
     margin-right: rem-calc(12);
     color: rgba(color(primary), .7);
+
+    @include breakpoint(small down) {
+        margin-bottom: rem-calc(20);
+    }
 }
 
 .sorting__handlers {

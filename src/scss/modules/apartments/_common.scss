@@ -80,6 +80,7 @@
         border: 1px solid color(primary);
         border-radius: $radius;
         transition: border-color 250ms;
+        z-index: 2;
         @each $name, $size in $global-gaps {
             @include breakpoint($name) {
                 left: $size / 2;
@@ -95,8 +96,17 @@
         }
     }
 
+    &:hover {
+        color: lighten(color(primary), 15%);
+    }
     &:hover::before {
-        border-color: lighten(color(primary), 10%);
+        border-color: lighten(color(primary), 15%);
+    }
+    .apartments__item_booked &:hover::before {
+        border-color: darken(color(secondary), 20%);
+    }
+    .apartments__item_sold &:hover::before {
+        border-color: darken(color(dark-gray), 20%);
     }
 }
 
@@ -168,15 +178,31 @@
 }
 
 .apartments__button {
+    position: relative;
     padding: rem-calc(12);
     font-size: rem-calc(12);
+    background-clip: padding-box;
     border: 1px solid transparent;
+    border-top: none;
     border-radius: 0 0 $radius $radius;
+    z-index: 3;
 
     .apartments__item_booked & {
         background-color: color(secondary);
     }
     .apartments__item_sold & {
         background-color: color(dark-gray);
+    }
+
+    &:hover {
+        border-color: lighten(color(primary), 10%);
+    }
+    .apartments__item_booked &:hover {
+        background-color: darken(color(secondary), 20%);
+        border-color: darken(color(secondary), 20%);
+    }
+    .apartments__item_sold &:hover {
+        background-color: darken(color(dark-gray), 20%);
+        border-color: darken(color(dark-gray), 20%);
     }
 }

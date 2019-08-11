@@ -28,22 +28,58 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 h1 {
-  font-size: 3rem; }
+  font-size: 2rem; }
+  @media print, screen and (min-width: 40em) {
+    h1 {
+      font-size: 2.5rem; } }
+  @media print, screen and (min-width: 64em) {
+    h1 {
+      font-size: 3rem; } }
 
 h2 {
-  font-size: 2.75rem; }
+  font-size: 1.75rem; }
+  @media print, screen and (min-width: 40em) {
+    h2 {
+      font-size: 2.25rem; } }
+  @media print, screen and (min-width: 64em) {
+    h2 {
+      font-size: 2.75rem; } }
 
 h3 {
-  font-size: 2.5rem; }
+  font-size: 1.5rem; }
+  @media print, screen and (min-width: 40em) {
+    h3 {
+      font-size: 2rem; } }
+  @media print, screen and (min-width: 64em) {
+    h3 {
+      font-size: 2.5rem; } }
 
 h4 {
-  font-size: 2.25rem; }
+  font-size: 1.25rem; }
+  @media print, screen and (min-width: 40em) {
+    h4 {
+      font-size: 1.75rem; } }
+  @media print, screen and (min-width: 64em) {
+    h4 {
+      font-size: 2.25rem; } }
 
 h5 {
-  font-size: 2rem; }
+  font-size: 1rem; }
+  @media print, screen and (min-width: 40em) {
+    h5 {
+      font-size: 1.5rem; } }
+  @media print, screen and (min-width: 64em) {
+    h5 {
+      font-size: 2rem; } }
 
 h6 {
-  font-size: 1.75rem; }
+  font-size: 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    h6 {
+      font-size: 1.25rem; } }
+  @media print, screen and (min-width: 64em) {
+    h6 {
+      font-size: 1.75rem; } }
 
 p {
   margin: 0 0 1rem; }
@@ -129,13 +165,39 @@ button {
   margin: 0 auto; }
 
 .page-main__header {
-  max-width: 70rem;
   margin: 0 auto;
-  padding: 3.375rem 3.375rem 2.1875rem; }
+  padding: 3.375rem 0 2.1875rem;
+  max-width: 71.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-main__header {
+      max-width: 73.375rem;
+      padding-left: 3.375rem;
+      padding-right: 3.375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-main__header {
+      max-width: 72.5rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-main__header {
+      max-width: 73.375rem;
+      padding-left: 3.375rem;
+      padding-right: 3.375rem; } }
 
 .page-main__body {
-  padding: 1.25rem 1.6875rem;
+  padding: 1.25rem 0.75rem;
   background-color: rgba(255, 255, 255, 0.9); }
+  @media print, screen and (min-width: 40em) {
+    .page-main__body {
+      padding: 1.25rem 1.6875rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-main__body {
+      padding: 1.25rem 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-main__body {
+      padding: 1.25rem 1.6875rem; } }
 
 .button {
   position: relative;
@@ -201,12 +263,31 @@ button {
   align-items: baseline;
   max-width: 70rem;
   margin: 0 auto 2.5rem;
-  padding: 0 1.6875rem;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .sorting {
+      padding-left: 1.6875rem;
+      padding-right: 1.6875rem; } }
+  @media print, screen and (min-width: 64em) {
+    .sorting {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .sorting {
+      padding-left: 1.6875rem;
+      padding-right: 1.6875rem; } }
+  @media screen and (max-width: 39.9375em) {
+    .sorting {
+      flex-direction: column; } }
 
 .sorting__title {
   margin-right: 0.75rem;
   color: rgba(0, 47, 47, 0.7); }
+  @media screen and (max-width: 39.9375em) {
+    .sorting__title {
+      margin-bottom: 1.25rem; } }
 
 .sorting__button {
   position: relative;
@@ -319,6 +400,7 @@ button {
     border: 1px solid #002f2f;
     border-radius: 3px;
     transition: border-color 250ms;
+    z-index: 2;
     left: 0.75rem;
     right: 0.75rem; }
     @media print, screen and (min-width: 40em) {
@@ -337,8 +419,14 @@ button {
       border-color: #a7a37e; }
     .apartments__item_sold .apartments__link::before {
       border-color: #a1a1a1; }
+  .apartments__link:hover {
+    color: #007c7c; }
   .apartments__link:hover::before {
-    border-color: #006262; }
+    border-color: #007c7c; }
+  .apartments__item_booked .apartments__link:hover::before {
+    border-color: #726e4d; }
+  .apartments__item_sold .apartments__link:hover::before {
+    border-color: #6e6e6e; }
 
 .apartments__details {
   display: flex;
@@ -406,14 +494,26 @@ button {
       padding: 0 3.375rem; } }
 
 .apartments__button {
+  position: relative;
   padding: 0.75rem;
   font-size: 0.75rem;
+  background-clip: padding-box;
   border: 1px solid transparent;
-  border-radius: 0 0 3px 3px; }
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  z-index: 3; }
   .apartments__item_booked .apartments__button {
     background-color: #a7a37e; }
   .apartments__item_sold .apartments__button {
     background-color: #a1a1a1; }
+  .apartments__button:hover {
+    border-color: #006262; }
+  .apartments__item_booked .apartments__button:hover {
+    background-color: #726e4d;
+    border-color: #726e4d; }
+  .apartments__item_sold .apartments__button:hover {
+    background-color: #6e6e6e;
+    border-color: #6e6e6e; }
 
 .labels {
   font-size: 0.75rem; }
