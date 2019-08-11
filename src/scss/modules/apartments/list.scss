@@ -37,6 +37,11 @@
 .apartments__labels {
     margin: 0;
 }
+.apartments__favorite {
+    position: relative;
+    margin-left: auto;
+    z-index: 3;
+}
 
 .apartments__img {
     position: relative;

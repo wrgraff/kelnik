@@ -1,3 +1,19 @@
 .favorite-button {
+    display: block;
+    width: rem-calc(32);
+    height: rem-calc(32);
+    margin: rem-calc(-6 -6 0 0);
+    padding: 0;
+    background-color: transparent;
+    background-image: url(../img/ico/star_outline.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 250ms;
 
+    &:hover {
+        background-color: color(blue);
+    }
 }
