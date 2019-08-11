@@ -18,10 +18,10 @@
     }
     display: flex;
     flex-direction: column;
-    margin-bottom: rem-calc(54);
 
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
+            margin-bottom: $size;
             padding: 0 $size / 2;
         }
     }

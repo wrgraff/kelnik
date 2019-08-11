@@ -23,6 +23,7 @@ $checkbox-size: rem-calc(18);
     display: flex;
     padding-left: $checkbox-size + rem-calc(10);
     font-size: rem-calc(18);
+    transition: color 250ms;
 
     &::before {
         content: '';
@@ -51,36 +52,28 @@ $checkbox-size: rem-calc(18);
         background-repeat: no-repeat;
         background-position: 50% 50%;
         border-radius: 2px;
-        transition: background-color 250ms;
+        opacity: 0;
+        transition: opacity 250ms;
     }
 
     .checkbox:hover & {
+        color: color(medium-gray);
+
         &::before {
             background-color: color(medium-gray);
         }
     }
     .checkbox__input:focus + & {
         &::before {
-            border-color: color(black);
             outline-width: 2px;
             outline-style: solid;
-            outline-color: rgba(color(primary), .2);
+            outline-color: rgba(color(primary), .3);
             outline-offset: $bit;
         }
     }
     .checkbox__input:checked + & {
-        &::before {
-            background-color: color(primary);
-            border-color: color(primary);
-        }
         &::after {
-            border-color: color(white);
-        }
-    }
-    .checkbox__input:checked:hover + & {
-        &::before {
-            background-color: smart-scale(color(primary));
-            border-color: smart-scale(color(primary));
+            opacity: 1;
         }
     }
 }

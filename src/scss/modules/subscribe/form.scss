@@ -1,5 +1,6 @@
 .subscribe-form {
     display: flex;
+    flex-wrap: wrap;
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
             margin: 0 ($size / -2);
@@ -8,7 +9,13 @@
 }
 
 .subscribe-form__fields {
-    flex-basis: 60%;
+    flex-basis: 100%;
+    margin-bottom: rem-calc(32);
+    @include breakpoint(medium) {
+        flex-basis: 60%;
+        max-width: 60%;
+        margin-bottom: 0;
+    }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
             padding: 0 ($size / 2);
@@ -16,7 +23,11 @@
     }
 }
 .subscribe-form__actions {
-    flex-basis: 40%;
+    flex-basis: 100%;
+    @include breakpoint(medium) {
+        flex-basis: 40%;
+        max-width: 40%;
+    }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
             padding: 0 ($size / 2);
@@ -25,6 +36,6 @@
 }
 
 .subscribe-form__button {
-    padding-top: rem-calc(15);
-    padding-bottom: rem-calc(16);
+    width: 100%;
+    padding: rem-calc(15 8 16);
 }

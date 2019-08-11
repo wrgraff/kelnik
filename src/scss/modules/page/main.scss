@@ -2,7 +2,11 @@
     flex-grow: 2;
     width: 100%;
     max-width: rem-calc(1280);
-    margin: 0 auto rem-calc(60);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            margin: 0 auto (rem-calc(8) + $size);
+        }
+    }
 }
 
 .page-main__header {
@@ -26,7 +30,7 @@
     }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
-            padding: rem-calc(20) ($size / 2) rem-calc(74);
+            padding: rem-calc(20) ($size / 2) (rem-calc(21) + $size);
         }
     }
     background-color: rgba(color(white), .9);

@@ -1,5 +1,10 @@
 .page-footer {
     width: 100%;
-    max-width: rem-calc(1280);
-    margin: 0 auto rem-calc(102);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            max-width: rem-calc(1280) + $size;
+            margin: 0 auto (rem-calc(49) + $size);
+            padding: $size / 2;
+        }
+    }
 }

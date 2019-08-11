@@ -103,6 +103,12 @@ body {
 ::-moz-focus-inner {
   border: 0; }
 
+:focus {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: rgba(0, 47, 47, 0.3);
+  outline-offset: 0.5rem; }
+
 a {
   text-decoration: none;
   color: #002f2f;
@@ -162,7 +168,16 @@ button {
   flex-grow: 2;
   width: 100%;
   max-width: 80rem;
-  margin: 0 auto 3.75rem; }
+  margin: 0 auto 2rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-main {
+      margin: 0 auto 3.8125rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-main {
+      margin: 0 auto 3rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-main {
+      margin: 0 auto 3.8125rem; } }
 
 .page-main__header {
   margin: 0 auto;
@@ -190,7 +205,7 @@ button {
 .page-main__body {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 0.75rem 4.625rem;
+  padding: 1.25rem 0.75rem 2.8125rem;
   background-color: rgba(255, 255, 255, 0.9); }
   .page-main__body > * {
     flex-basis: 100%; }
@@ -199,15 +214,31 @@ button {
       padding: 1.25rem 1.65625rem 4.625rem; } }
   @media print, screen and (min-width: 64em) {
     .page-main__body {
-      padding: 1.25rem 1.25rem 4.625rem; } }
+      padding: 1.25rem 1.25rem 3.8125rem; } }
   @media screen and (min-width: 72.0625em) {
     .page-main__body {
       padding: 1.25rem 1.65625rem 4.625rem; } }
 
 .page-footer {
   width: 100%;
-  max-width: 80rem;
-  margin: 0 auto 6.375rem; }
+  max-width: 81.5rem;
+  margin: 0 auto 4.5625rem;
+  padding: 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-footer {
+      max-width: 83.3125rem;
+      margin: 0 auto 6.375rem;
+      padding: 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-footer {
+      max-width: 82.5rem;
+      margin: 0 auto 5.5625rem;
+      padding: 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-footer {
+      max-width: 83.3125rem;
+      margin: 0 auto 6.375rem;
+      padding: 1.65625rem; } }
 
 .button {
   position: relative;
@@ -300,7 +331,7 @@ button {
     .input__field:invalid:focus {
       outline-width: 2px;
       outline-style: solid;
-      outline-color: rgba(255, 255, 255, 0.2);
+      outline-color: rgba(0, 47, 47, 0.3);
       outline-offset: 0.5rem; }
   .input__field:hover {
     border-color: #6e6e6e; }
@@ -361,7 +392,8 @@ button {
   position: relative;
   display: flex;
   padding-left: 1.75rem;
-  font-size: 1.125rem; }
+  font-size: 1.125rem;
+  transition: color 250ms; }
   .checkbox__text::before {
     content: '';
     position: absolute;
@@ -387,23 +419,19 @@ button {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 2px;
-    transition: background-color 250ms; }
-  .checkbox:hover .checkbox__text::before {
-    background-color: #d6d6d6; }
+    opacity: 0;
+    transition: opacity 250ms; }
+  .checkbox:hover .checkbox__text {
+    color: #d6d6d6; }
+    .checkbox:hover .checkbox__text::before {
+      background-color: #d6d6d6; }
   .checkbox__input:focus + .checkbox__text::before {
-    border-color: #313639;
     outline-width: 2px;
     outline-style: solid;
-    outline-color: rgba(0, 47, 47, 0.2);
+    outline-color: rgba(0, 47, 47, 0.3);
     outline-offset: 0.5rem; }
-  .checkbox__input:checked + .checkbox__text::before {
-    background-color: #002f2f;
-    border-color: #002f2f; }
   .checkbox__input:checked + .checkbox__text::after {
-    border-color: #ffffff; }
-  .checkbox__input:checked:hover + .checkbox__text::before {
-    background-color: #007979;
-    border-color: #007979; }
+    opacity: 1; }
 
 .checkbox__helper,
 .checkbox__error {
@@ -533,7 +561,7 @@ button {
   flex-basis: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.375rem;
+  margin-bottom: 1.5rem;
   padding: 0 0.75rem; }
   @media print, screen and (min-width: 40em) {
     .apartments__item {
@@ -545,12 +573,15 @@ button {
       max-width: 33.3333%; } }
   @media print, screen and (min-width: 40em) {
     .apartments__item {
+      margin-bottom: 3.3125rem;
       padding: 0 1.65625rem; } }
   @media print, screen and (min-width: 64em) {
     .apartments__item {
+      margin-bottom: 2.5rem;
       padding: 0 1.25rem; } }
   @media screen and (min-width: 72.0625em) {
     .apartments__item {
+      margin-bottom: 3.3125rem;
       padding: 0 1.65625rem; } }
 
 .apartments__header {
@@ -727,13 +758,13 @@ button {
 
 .apartments-button {
   display: block;
-  margin: 0 9.75rem;
+  margin: 0 3rem;
   font-size: 0.875rem;
   padding: 1.875rem 1.75rem 1.75rem;
   background-color: #046380; }
   @media print, screen and (min-width: 40em) {
     .apartments-button {
-      margin: 0 21.53125rem; } }
+      margin: 0 6.625rem; } }
   @media print, screen and (min-width: 64em) {
     .apartments-button {
       margin: 0 16.25rem; } }
@@ -758,6 +789,7 @@ button {
 
 .subscribe {
   display: flex;
+  flex-wrap: wrap;
   padding: 0.75rem;
   color: #ffffff;
   background-color: #046380;
@@ -773,8 +805,14 @@ button {
       padding: 1.65625rem; } }
 
 .subscribe__description {
-  flex-basis: 43.5%;
+  flex-basis: 100%;
   padding: 0.75rem; }
+  @media print, screen and (min-width: 64em) {
+    .subscribe__description {
+      flex-basis: 43.5%; } }
+  @media screen and (max-width: 39.9375em) {
+    .subscribe__description {
+      margin-bottom: 2rem; } }
   @media print, screen and (min-width: 40em) {
     .subscribe__description {
       padding: 1.65625rem; } }
@@ -786,17 +824,21 @@ button {
       padding: 1.65625rem; } }
 
 .subscribe__form {
-  flex-basis: 56.5%;
-  padding: 0.75rem 2.25rem 0.75rem 0.75rem; }
-  @media print, screen and (min-width: 40em) {
-    .subscribe__form {
-      padding: 1.65625rem 4.96875rem 1.65625rem 1.65625rem; } }
+  flex-basis: 100%;
+  padding: 0.75rem; }
   @media print, screen and (min-width: 64em) {
     .subscribe__form {
-      padding: 1.25rem 3.75rem 1.25rem 1.25rem; } }
+      flex-basis: 56.5%; } }
+  @media print, screen and (min-width: 40em) {
+    .subscribe__form {
+      padding: 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .subscribe__form {
+      padding: 1.25rem; } }
   @media screen and (min-width: 72.0625em) {
     .subscribe__form {
-      padding: 1.65625rem 4.96875rem 1.65625rem 1.65625rem; } }
+      padding: 1.65625rem;
+      padding-right: 4.96875rem; } }
 
 .subscribe__title {
   margin-bottom: 0.5rem;
@@ -811,6 +853,7 @@ button {
 
 .subscribe-form {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 -0.75rem; }
   @media print, screen and (min-width: 40em) {
     .subscribe-form {
@@ -823,8 +866,14 @@ button {
       margin: 0 -1.65625rem; } }
 
 .subscribe-form__fields {
-  flex-basis: 60%;
+  flex-basis: 100%;
+  margin-bottom: 2rem;
   padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .subscribe-form__fields {
+      flex-basis: 60%;
+      max-width: 60%;
+      margin-bottom: 0; } }
   @media print, screen and (min-width: 40em) {
     .subscribe-form__fields {
       padding: 0 1.65625rem; } }
@@ -836,8 +885,12 @@ button {
       padding: 0 1.65625rem; } }
 
 .subscribe-form__actions {
-  flex-basis: 40%;
+  flex-basis: 100%;
   padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .subscribe-form__actions {
+      flex-basis: 40%;
+      max-width: 40%; } }
   @media print, screen and (min-width: 40em) {
     .subscribe-form__actions {
       padding: 0 1.65625rem; } }
@@ -849,5 +902,5 @@ button {
       padding: 0 1.65625rem; } }
 
 .subscribe-form__button {
-  padding-top: 0.9375rem;
-  padding-bottom: 1rem; }
+  width: 100%;
+  padding: 0.9375rem 0.5rem 1rem; }

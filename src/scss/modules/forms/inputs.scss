@@ -63,7 +63,7 @@ $input-field-darken: 20%;
         &:focus {
             outline-width: 2px;
             outline-style: solid;
-            outline-color: rgba(color(white), .2);
+            outline-color: rgba(color(primary), .3);
             outline-offset: $bit;
         }
     }

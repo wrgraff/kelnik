@@ -1,8 +1,14 @@
 .apartments-button {
     display: block;
     @each $name, $size in $global-gaps {
-        @include breakpoint($name) {
-            margin: 0 ($size * 6.5);
+        @if (($name == large) or ($name == xlarge) or ($name == xxlarge)) {
+            @include breakpoint($name) {
+                margin: 0 ($size * 6.5);
+            }
+        } @else {
+            @include breakpoint($name) {
+                margin: 0 ($size * 2);
+            }
         }
     }
     font-size: rem-calc(14);
