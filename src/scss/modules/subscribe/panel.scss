@@ -1,0 +1,43 @@
+.subscribe {
+    display: flex;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: $size / 2;
+        }
+    }
+    color: color(white);
+    background-color: color(blue);
+    border-radius: $radius;
+}
+
+.subscribe__description {
+    flex-basis: 43.5%;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: $size / 2;
+        }
+    }
+}
+.subscribe__form {
+    flex-basis: 56.5%;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: ($size / 2) ($size / 2 + $size) ($size / 2) ($size / 2);
+        }
+    }
+}
+
+.subscribe__title {
+    margin-bottom: rem-calc(8);
+    font-size: rem-calc(34);
+    line-height: 1.1;
+    font-weight: font-weight(semibold);
+}
+
+.subscribe__text {
+    font-size: rem-calc(18);
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

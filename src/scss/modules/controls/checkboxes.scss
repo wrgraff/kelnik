@@ -1,10 +1,10 @@
-$checkbox-size: rem-calc(20);
+$checkbox-size: rem-calc(18);
 
 .checkbox {
     display: block;
-    margin-bottom: $bit * 2;
-    color: color(dark-gray);
+    color: color(white);
     transition: color 250ms;
+    cursor: pointer;
 
     &:hover {
         color: color(black);
@@ -21,39 +21,42 @@ $checkbox-size: rem-calc(20);
 .checkbox__text {
     position: relative;
     display: flex;
-    padding-left: $checkbox-size + ($bit * 1.5);
+    padding-left: $checkbox-size + rem-calc(10);
+    font-size: rem-calc(18);
 
     &::before {
         content: '';
         position: absolute;
         left: 0;
-        top: (rem-calc(24) - $checkbox-size) / 2;
+        top: (rem-calc(28) - $checkbox-size) / 2;
         display: block;
         flex-shrink: 0;
         width: $checkbox-size;
         height: $checkbox-size;
-        margin-right: $bit;
-        border: 2px solid color(dark-gray);
-        border-radius: $radius;
-        transition: background-color 250ms, border-color 250ms;
+        background-color: color(white);
+        border-radius: 2px;
+        transition: background-color 250ms;
     }
 
     &::after {
         content: '';
         position: absolute;
-        left: $checkbox-size / 2;
-        top: (($checkbox-size / 2) + (rem-calc(24) - $checkbox-size) / 2) - (($checkbox-size / 2.3) / 4);
-        width: $checkbox-size / 3.3 * 2;
-        height: $checkbox-size / 3;
-        border-style: solid;
-        border-color: color(white);
-        border-width: 0 0 2px 2px;
-        transform: translate(-50%, -50%) rotate(-45deg);
+        left: 0;
+        top: (rem-calc(28) - $checkbox-size) / 2;
+        display: block;
+        flex-shrink: 0;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        background-image: url(../img/ico/check.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-radius: 2px;
+        transition: background-color 250ms;
     }
 
     .checkbox:hover & {
         &::before {
-            border-color: color(black);
+            background-color: color(medium-gray);
         }
     }
     .checkbox__input:focus + & {

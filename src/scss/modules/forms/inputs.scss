@@ -8,13 +8,11 @@ $input-field-darken: 20%;
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-bottom: $bit * 2;
+    margin-bottom: rem-calc(18);
 }
 .input__text {
     order: 1;
     display: block;
-    margin-left: $bit;
-    padding: $bit;
     color: $input-field-color;
     line-height: 1;
     transform-origin: left top;
@@ -35,24 +33,27 @@ $input-field-darken: 20%;
 
     .input_floating & {
         position: absolute;
-        top: $bit * 1.5;
-        left: $bit;
-        margin-left: 0;
+        top: 50%;
+        left: rem-calc(20);
+        transform: translateY(-50%);
     }
     .input_floating .input__field:focus + & {
-        transform: translateY($bit * -3) scale(.8);
+        color: color(white);
+        transform: translateY(calc(-50% - #{rem-calc(44)}));
     }
     .input_floating .input__field_filled + & {
-        transform: translateY($bit * -3) scale(.8);
+        color: color(white);
+        transform: translateY(calc(-50% - #{rem-calc(44)}));
     }
 }
 .input__field {
     order: 2;
     width: 100%;
-    padding: ($bit * 2) - rem-calc(2);
-    border: 2px solid $input-field-color;
-    border-radius: $radius;
-    font-size: font-size(medium);
+    padding: rem-calc(14 20 15);
+    border: none;
+    border-radius: 2px;
+    font-size: rem-calc(18);
+    line-height: 1;
     transition: border-color 250ms, box-shadow 250ms;
 
     &:invalid {
@@ -62,7 +63,7 @@ $input-field-darken: 20%;
         &:focus {
             outline-width: 2px;
             outline-style: solid;
-            outline-color: rgba(color(primary), .2);
+            outline-color: rgba(color(white), .2);
             outline-offset: $bit;
         }
     }
@@ -94,7 +95,6 @@ $input-field-darken: 20%;
         border-color: darken($input-field-color-error, $input-field-darken);
     }
 }
-.input__helper,
 .input__error {
     order: 3;
     display: inline-block;
@@ -103,14 +103,6 @@ $input-field-darken: 20%;
     font-size: font-size(small);
     line-height: 1;
     transition: opacity 250ms, transform 250ms;
-}
-.input__helper {
-    .input__field_status_invalid ~ & {
-        opacity: 0;
-        transform: translateY(rem-calc(24));
-    }
-}
-.input__error {
     position: absolute;
     top: rem-calc(56);
     color: color(secondary);

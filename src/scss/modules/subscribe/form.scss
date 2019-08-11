@@ -1,0 +1,30 @@
+.subscribe-form {
+    display: flex;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            margin: 0 ($size / -2);
+        }
+    }
+}
+
+.subscribe-form__fields {
+    flex-basis: 60%;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
+}
+.subscribe-form__actions {
+    flex-basis: 40%;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
+}
+
+.subscribe-form__button {
+    padding-top: rem-calc(15);
+    padding-bottom: rem-calc(16);
+}

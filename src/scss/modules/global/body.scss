@@ -9,20 +9,4 @@ body {
     color: color(black);
     font-family: $font-family, sans-serif;
     background-color: rgba(color(bg), .3);
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-image: url(../img/test.png);
-        background-position: 50% 0;
-        opacity: .2;
-        filter: sepia(30%);
-    }
-    &::after {
-        display: none;
-    }
 }

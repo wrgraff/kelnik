@@ -2,3 +2,4 @@
 //=require utils/add-element.js
 
 // Site apps
+//=require app/forms/floatedInputs.js
