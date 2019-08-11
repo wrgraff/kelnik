@@ -3,7 +3,6 @@
     display: inline-block;
     padding: rem-calc(19 40);
     color: color(white);
-    background-color: color(primary);
     border: none;
     border-radius: $radius;
     line-height: 1;
@@ -11,8 +10,4 @@
     font-weight: font-weight(semibold);
     cursor: pointer;
     transition: background-color 200ms;
-
-    &:hover {
-        background-color: lighten(color(primary), 10%);
-    }
 }

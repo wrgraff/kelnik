@@ -471,16 +471,27 @@
         <footer class="page-footer">
             <div class="subscribe">
                 <div class="subscribe__description">
-                    <div class="subscribe__title">
-                        <h3>Успей купить!</h3>
-                    </div>
+                    <h3 class="subscribe__title">Успей купить!</h3>
                     <div class="subscribe__text">
                         <p>Подпишись и успей словить все акции</p>
                     </div>
                 </div>
 
                 <form action="#" class="subscribe__form form">
+                    <div class="form__fields">
+                        <label class="input">
+                            <input type="email" name="" value="" required class="input__field" />
+                            <span class="input__text">Email</span>
+                        </label>
 
+                        <label class="checkbox">
+                            <input type="checkbox" name="" class="checkbox__input" />
+                            <span class="checkbox__text">подписаться на новости</span>
+                        </label>
+                    </div>
+                    <div class="form__actions">
+                        <button type="submit" class="button button_color_secondary">Подписаться</button>
+                    </div>
                 </form>
             </div>
         </footer>

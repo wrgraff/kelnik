@@ -1,0 +1,96 @@
+$radio-size: rem-calc(20);
+
+.radio {
+    display: block;
+    margin-bottom: $bit * 2;
+    color: color(dark-gray);
+    transition: color 250ms;
+
+    &:hover {
+        color: color(black);
+    }
+}
+.radio__input {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    position: absolute;
+}
+.radio__text {
+    position: relative;
+    display: flex;
+    padding-left: $radio-size + ($bit * 1.5);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: (rem-calc(24) - $radio-size) / 2;
+        display: block;
+        flex-shrink: 0;
+        width: $radio-size;
+        height: $radio-size;
+        margin-right: $bit;
+        border: 2px solid color(dark-gray);
+        border-radius: 50%;
+        transition: background-color 250ms, border-color 250ms;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: rem-calc(5);
+        top: ((rem-calc(24) - $radio-size) / 2) + rem-calc(5);
+        width: $radio-size - rem-calc(10);
+        height: $radio-size - rem-calc(10);
+        background-color: color(white);
+        border-radius: 50%;
+        transition: background-color 250ms;
+    }
+
+    .radio:hover & {
+        &::before {
+            border-color: color(black);
+        }
+    }
+    .radio__input:focus + & {
+        &::before {
+            border-color: color(black);
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: rgba(color(primary), .2);
+            outline-offset: $bit;
+        }
+    }
+    .radio__input:checked + & {
+        &::before {
+            border-color: color(primary);
+        }
+        &::after {
+            background-color: color(primary);
+        }
+    }
+    .radio__input:checked:hover + & {
+        &::before {
+            border-color: smart-scale(color(primary));
+        }
+        &::after {
+            background-color: smart-scale(color(primary));
+        }
+    }
+}
+.radio__helper {
+    order: 3;
+    display: inline-block;
+    padding: $bit / 2;
+    padding-left: $radio-size + ($bit * 1.5);
+    color: color(medium-gray);
+    font-size: font-size(small);
+    line-height: 1;
+
+    .input__field_status_invalid ~ & {
+        opacity: 0;
+    }
+}

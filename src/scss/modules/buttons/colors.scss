@@ -1,0 +1,28 @@
+$buttons-colors: (
+    default: color(primary),
+    secondary: color(secondary),
+);
+
+.button {
+    background-color: map-get($buttons-colors, default);
+
+    &:hover {
+        background-color: lighten(map-get($buttons-colors, default), 10%);
+    }
+}
+.button_color {
+    @each $name, $color in $buttons-colors {
+        @if ($name != default) {
+            &_#{$name} {
+                background-color: $color;
+
+                &:active {
+                    background-color: darken($color, 10%);
+                }
+                &:hover {
+                    background-color: darken($color, 10%);
+                }
+            }
+        }
+    }
+}

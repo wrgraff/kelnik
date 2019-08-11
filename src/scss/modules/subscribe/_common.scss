@@ -1,0 +1,25 @@
+.subscribe {
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: $size;
+        }
+    }
+    color: color(white);
+    background-color: color(blue);
+    border-radius: $radius;
+}
+
+.subscribe__title {
+    margin-bottom: rem-calc(8);
+    font-size: rem-calc(34);
+    line-height: 1.1;
+    font-weight: font-weight(semibold);
+}
+
+.subscribe__text {
+    font-size: rem-calc(18);
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

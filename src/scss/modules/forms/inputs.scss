@@ -1,0 +1,126 @@
+$input-field-color: color(dark-gray);
+$input-field-color-focus: color(primary);
+$input-field-color-success: color(secondary);
+$input-field-color-error: color(alert);
+$input-field-darken: 20%;
+
+.input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $bit * 2;
+}
+.input__text {
+    order: 1;
+    display: block;
+    margin-left: $bit;
+    padding: $bit;
+    color: $input-field-color;
+    line-height: 1;
+    transform-origin: left top;
+    transition: transform 250ms, color 250ms;
+    cursor: text;
+
+    .input__field:focus + & {
+        color: $input-field-color-focus;
+    }
+    .input__field_status_valid + &,
+    .input__field_status_valid:focus + & {
+        color: $input-field-color-success;
+    }
+    .input__field_status_invalid + &,
+    .input__field_status_invalid:focus + & {
+        color: $input-field-color-error;
+    }
+
+    .input_floating & {
+        position: absolute;
+        top: $bit * 1.5;
+        left: $bit;
+        margin-left: 0;
+    }
+    .input_floating .input__field:focus + & {
+        transform: translateY($bit * -3) scale(.8);
+    }
+    .input_floating .input__field_filled + & {
+        transform: translateY($bit * -3) scale(.8);
+    }
+}
+.input__field {
+    order: 2;
+    width: 100%;
+    padding: ($bit * 2) - rem-calc(2);
+    border: 2px solid $input-field-color;
+    border-radius: $radius;
+    font-size: font-size(medium);
+    transition: border-color 250ms, box-shadow 250ms;
+
+    &:invalid {
+        outline: none;
+        box-shadow: none;
+
+        &:focus {
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: rgba(color(primary), .2);
+            outline-offset: $bit;
+        }
+    }
+    &:hover {
+        border-color: darken($input-field-color, $input-field-darken);
+    }
+    &:focus {
+        border-color: $input-field-color-focus;
+        box-shadow: shadow(1-lvl);
+    }
+}
+.input__field_status_valid {
+    border-color: $input-field-color-success;
+
+    &:focus {
+        border-color: $input-field-color-success;
+    }
+    &:hover {
+        border-color: darken($input-field-color-success, $input-field-darken);
+    }
+}
+.input__field_status_invalid {
+    border-color: $input-field-color-error;
+
+    &:focus {
+        border-color: $input-field-color-error;
+    }
+    &:hover {
+        border-color: darken($input-field-color-error, $input-field-darken);
+    }
+}
+.input__helper,
+.input__error {
+    order: 3;
+    display: inline-block;
+    padding: $bit $bit $bit ($bit * 2);
+    color: color(medium-gray);
+    font-size: font-size(small);
+    line-height: 1;
+    transition: opacity 250ms, transform 250ms;
+}
+.input__helper {
+    .input__field_status_invalid ~ & {
+        opacity: 0;
+        transform: translateY(rem-calc(24));
+    }
+}
+.input__error {
+    position: absolute;
+    top: rem-calc(56);
+    color: color(secondary);
+    background-color: color(white);
+    opacity: 0;
+    transform: translateY(rem-calc(24));
+    z-index: 3;
+
+    .input__field_status_invalid ~ & {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

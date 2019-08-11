@@ -2,7 +2,7 @@
     flex-grow: 2;
     width: 100%;
     max-width: rem-calc(1280);
-    margin: 0 auto;
+    margin: 0 auto rem-calc(60);
 }
 
 .page-main__header {
@@ -15,6 +15,7 @@
             padding-right: $size;
         }
     }
+    color: color(primary);
 }
 
 .page-main__body {

@@ -1,0 +1,97 @@
+$checkbox-size: rem-calc(20);
+
+.checkbox {
+    display: block;
+    margin-bottom: $bit * 2;
+    color: color(dark-gray);
+    transition: color 250ms;
+
+    &:hover {
+        color: color(black);
+    }
+}
+.checkbox__input {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    position: absolute;
+}
+.checkbox__text {
+    position: relative;
+    display: flex;
+    padding-left: $checkbox-size + ($bit * 1.5);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: (rem-calc(24) - $checkbox-size) / 2;
+        display: block;
+        flex-shrink: 0;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        margin-right: $bit;
+        border: 2px solid color(dark-gray);
+        border-radius: $radius;
+        transition: background-color 250ms, border-color 250ms;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: $checkbox-size / 2;
+        top: (($checkbox-size / 2) + (rem-calc(24) - $checkbox-size) / 2) - (($checkbox-size / 2.3) / 4);
+        width: $checkbox-size / 3.3 * 2;
+        height: $checkbox-size / 3;
+        border-style: solid;
+        border-color: color(white);
+        border-width: 0 0 2px 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .checkbox:hover & {
+        &::before {
+            border-color: color(black);
+        }
+    }
+    .checkbox__input:focus + & {
+        &::before {
+            border-color: color(black);
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: rgba(color(primary), .2);
+            outline-offset: $bit;
+        }
+    }
+    .checkbox__input:checked + & {
+        &::before {
+            background-color: color(primary);
+            border-color: color(primary);
+        }
+        &::after {
+            border-color: color(white);
+        }
+    }
+    .checkbox__input:checked:hover + & {
+        &::before {
+            background-color: smart-scale(color(primary));
+            border-color: smart-scale(color(primary));
+        }
+    }
+}
+.checkbox__helper,
+.checkbox__error {
+    order: 3;
+    display: inline-block;
+    padding: $bit / 2;
+    padding-left: $checkbox-size + ($bit * 1.5);
+    color: color(medium-gray);
+    font-size: font-size(small);
+    line-height: 1;
+
+    .input__field_status_invalid ~ & {
+        opacity: 0;
+    }
+}
