@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>star_solid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="star_solid" fill-rule="nonzero" fill="#A7A37E">
+            <path d="M12.6159957,7.35592925 C21.7043253,7.75723211 21.3266285,6.62414166 14.2212071,12.2895939 C16.6290244,21.0238328 17.5732664,20.3392573 10.0193301,15.3583806 C2.39457557,20.3864694 3.38602972,21.118257 5.79384692,12.2895939 C-1.33518049,6.60053561 -1.71287731,7.75723211 7.42266445,7.35592925 C10.5858753,-1.11864308 9.42917879,-1.11864308 12.6159957,7.35592925 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
