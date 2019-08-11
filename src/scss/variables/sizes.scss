@@ -1,1 +1,7 @@
 $bit: rem-calc(8);
+$global-gaps: (
+    small: rem-calc(24),
+    medium: rem-calc(54),
+    large: rem-calc(40),
+    xlarge: rem-calc(54),
+);

@@ -92,11 +92,9 @@
                 </div>
 
                 <div class="apartments">
-                    <div class="apartments__item">
+                    <!-- Apartment 1 -->
+                    <div class="apartments__item apartments__item_booked">
                         <div class="apartments__header">
-                            <p class="apartments__labels labels">
-                                <span class="labels__item">-17%</span>
-                            </p>
                             <div class="apartments__favorite">
                                 <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
                             </div>
@@ -115,13 +113,360 @@
 
                         <ul class="apartments__details">
                             <li>без отделки</li>
-                            <li>28 м<sup>2</sup> площадь</li>
-                            <li>12/14 этаж</li>
+                            <li>28 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>12/14 <span class="apartments__comment">этаж</span></li>
                         </ul>
 
                         <p class="apartments__price">1 900 000 руб.</p>
 
-                        <button type="button" class="apartments__button">Забронировано</button>
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 2 -->
+                    <div class="apartments__item">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/2.webp 1x,
+                                            /static/img/apartments/2@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/2.png"
+                            srcset="/static/img/apartments/2@2x.png 2x"
+                            alt="Однокомнатная №666" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Однокомнатная №666</a>
+
+                        <ul class="apartments__details">
+                            <li>базовая отделка</li>
+                            <li>66 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>6/6 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">1 666 666 руб.</p>
+
+                        <button type="button" class="button apartments__button">Свободно</button>
+                    </div>
+
+                    <!-- Apartment 3 -->
+                    <div class="apartments__item apartments__item_sold">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/3.webp 1x,
+                                            /static/img/apartments/3@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/3.png"
+                            srcset="/static/img/apartments/3@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Двухкомнатная №567</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>65.6 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>7/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">5 900 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Продано</button>
+                    </div>
+
+                    <!-- Apartment 4 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/4.webp 1x,
+                                            /static/img/apartments/4@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/4.png"
+                            srcset="/static/img/apartments/4@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Трехкомнатная №45</a>
+
+                        <ul class="apartments__details">
+                            <li>без отделки</li>
+                            <li>56 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>1/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">12 900 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 5 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-17%</span>
+                                <span class="labels__item">Шок цена!</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/5.webp 1x,
+                                            /static/img/apartments/5@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/5.png"
+                            srcset="/static/img/apartments/5@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Студия  №25</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>18 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>12/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">1 900 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 6 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-6%</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/6.webp 1x,
+                                            /static/img/apartments/6@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/6.png"
+                            srcset="/static/img/apartments/6@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Четырехкомнатная №259</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>98 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>14/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">23 900 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 7 -->
+                    <div class="apartments__item">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/7.webp 1x,
+                                            /static/img/apartments/7@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/7.png"
+                            srcset="/static/img/apartments/7@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Однокомнатная  №56</a>
+
+                        <ul class="apartments__details">
+                            <li>без отделки</li>
+                            <li>36 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>3/6 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">5 666 666 руб.</p>
+
+                        <button type="button" class="button apartments__button">Свободно</button>
+                    </div>
+
+                    <!-- Apartment 8 -->
+                    <div class="apartments__item">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/8.webp 1x,
+                                            /static/img/apartments/8@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/8.png"
+                            srcset="/static/img/apartments/8@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Трехкомнтаная №46</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>86 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>1/6 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">5 696 664 руб.</p>
+
+                        <button type="button" class="button apartments__button">Свободно</button>
+                    </div>
+
+                    <!-- Apartment 9 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-9%</span>
+                                <span class="labels__item">Шок цена!</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/9.webp 1x,
+                                            /static/img/apartments/9@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/9.png"
+                            srcset="/static/img/apartments/9@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Однокомнатная №2</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>18 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>3/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">1 200 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 10 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-6%</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/10.webp 1x,
+                                            /static/img/apartments/10@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/10.png"
+                            srcset="/static/img/apartments/10@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Студия №12</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>38 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>6/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">1 500 500 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 11 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/11.webp 1x,
+                                            /static/img/apartments/11@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/11.png"
+                            srcset="/static/img/apartments/11@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Однокомнатная №8</a>
+
+                        <ul class="apartments__details">
+                            <li>черновая отделка</li>
+                            <li>48 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>3/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">6 200 000 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
+                    </div>
+
+                    <!-- Apartment 12 -->
+                    <div class="apartments__item apartments__item_booked">
+                        <div class="apartments__header">
+                            <p class="apartments__labels labels">
+                                <span class="labels__item">-6%</span>
+                            </p>
+                            <div class="apartments__favorite">
+                                <button type="button" class="favorite-button" aria-label="Добавить в избранное"></button>
+                            </div>
+                        </div>
+
+                        <picture class="apartments__img">
+                            <source srcset="/static/img/apartments/12.webp 1x,
+                                            /static/img/apartments/12@2x.webp 2x"
+                                    type="image/webp" />
+                            <img src="/static/img/apartments/12.png"
+                            srcset="/static/img/apartments/12@2x.png 2x"
+                            alt="Студия №44" />
+                        </picture>
+
+                        <a href="#" class="apartments__link">Двухкомнатная №23</a>
+
+                        <ul class="apartments__details">
+                            <li>базовая отделка</li>
+                            <li>48 м<sup>2</sup> <span class="apartments__comment">площадь</span></li>
+                            <li>3/14 <span class="apartments__comment">этаж</span></li>
+                        </ul>
+
+                        <p class="apartments__price">5 255 006 руб.</p>
+
+                        <button type="button" class="button apartments__button">Забронировано</button>
                     </div>
                 </div>
             </section>

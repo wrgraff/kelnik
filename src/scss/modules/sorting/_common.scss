@@ -1,7 +1,9 @@
 .sorting {
     display: flex;
     align-items: baseline;
-    margin-bottom: rem-calc(40);
+    max-width: rem-calc(1120);
+    margin: 0 auto rem-calc(40);
+    padding: rem-calc(0 27);
     font-size: rem-calc(14);
 }
 

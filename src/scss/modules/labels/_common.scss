@@ -1,0 +1,14 @@
+.labels {
+    font-size: rem-calc(12);
+}
+
+.labels__item {
+    display: inline-block;
+    margin-right: rem-calc(17);
+    padding: rem-calc(3);
+    color: color(white);
+    background-color: color(alert);
+    border-radius: $radius;
+    line-height: 1;
+    text-transform: uppercase;
+}

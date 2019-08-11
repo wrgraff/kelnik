@@ -45,6 +45,9 @@ h5 {
 h6 {
   font-size: 1.75rem; }
 
+p {
+  margin: 0 0 1rem; }
+
 html,
 body {
   height: 100%;
@@ -126,11 +129,28 @@ button {
   margin: 0 auto; }
 
 .page-main__header {
-  padding: 3.375rem 6.625rem 2.1875rem; }
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 3.375rem 3.375rem 2.1875rem; }
 
 .page-main__body {
-  padding: 1.25rem 6.625rem;
+  padding: 1.25rem 1.6875rem;
   background-color: rgba(255, 255, 255, 0.9); }
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 1.1875rem 2.5rem;
+  color: #ffffff;
+  background-color: #002f2f;
+  border: none;
+  border-radius: 3px;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 200ms; }
+  .button:hover {
+    background-color: #006262; }
 
 .logo {
   display: block;
@@ -179,7 +199,9 @@ button {
 .sorting {
   display: flex;
   align-items: baseline;
-  margin-bottom: 2.5rem;
+  max-width: 70rem;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.6875rem;
   font-size: 0.875rem; }
 
 .sorting__title {
@@ -213,3 +235,195 @@ button {
     border-radius: 50%; }
   .sorting__button:hover {
     color: #ff4444; }
+
+.apartments {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 70rem;
+  margin: 0 auto; }
+
+.apartments__item {
+  position: relative;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.375rem;
+  padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .apartments__item {
+      flex-basis: 50%;
+      max-width: 50%; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__item {
+      flex-basis: 33.3333%;
+      max-width: 33.3333%; } }
+  @media print, screen and (min-width: 40em) {
+    .apartments__item {
+      padding: 0 1.6875rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__item {
+      padding: 0 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .apartments__item {
+      padding: 0 1.6875rem; } }
+
+.apartments__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 1rem 1rem 0; }
+
+.apartments__labels {
+  margin: 0; }
+
+.apartments__img {
+  position: relative;
+  display: block;
+  margin-bottom: 2.25rem;
+  padding: 0 1rem;
+  padding-bottom: 71%; }
+  .apartments__img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%; }
+
+.apartments__link {
+  flex-grow: 2;
+  display: block;
+  margin-bottom: 1.625rem;
+  padding: 0 1.5rem;
+  color: #002f2f;
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 1.25rem; }
+  @media print, screen and (min-width: 40em) {
+    .apartments__link {
+      padding: 0 3.375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__link {
+      padding: 0 2.5rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .apartments__link {
+      padding: 0 3.375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__link {
+      font-size: 1.5rem; } }
+  .apartments__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 1px solid #002f2f;
+    border-radius: 3px;
+    transition: border-color 250ms;
+    left: 0.75rem;
+    right: 0.75rem; }
+    @media print, screen and (min-width: 40em) {
+      .apartments__link::before {
+        left: 1.6875rem;
+        right: 1.6875rem; } }
+    @media print, screen and (min-width: 64em) {
+      .apartments__link::before {
+        left: 1.25rem;
+        right: 1.25rem; } }
+    @media screen and (min-width: 72.0625em) {
+      .apartments__link::before {
+        left: 1.6875rem;
+        right: 1.6875rem; } }
+    .apartments__item_booked .apartments__link::before {
+      border-color: #a7a37e; }
+    .apartments__item_sold .apartments__link::before {
+      border-color: #a1a1a1; }
+  .apartments__link:hover::before {
+    border-color: #006262; }
+
+.apartments__details {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+  padding: 0 1.5rem;
+  font-size: 1.125rem;
+  list-style: none; }
+  @media print, screen and (min-width: 40em) {
+    .apartments__details {
+      padding: 0 3.375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__details {
+      padding: 0 2.5rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .apartments__details {
+      padding: 0 3.375rem; } }
+  .apartments__details li {
+    position: relative;
+    flex: 0px 1 1;
+    padding: 0 0.1875rem; }
+    .apartments__details li:first-child {
+      flex-basis: 43%;
+      max-width: 43%;
+      flex-grow: 2;
+      padding: 0.25rem 1.875rem 0 0.8125rem;
+      color: #046380;
+      font-size: 1rem;
+      line-height: 1.2; }
+      .apartments__details li:first-child::before {
+        content: '';
+        position: absolute;
+        left: 0.125rem;
+        top: 0.5rem;
+        bottom: 0.1875rem;
+        width: 0.1875rem;
+        border-radius: 3px;
+        background-color: #046380; }
+    .apartments__details li:nth-child(2) {
+      flex-basis: 32%;
+      max-width: 32%; }
+    .apartments__details li:nth-child(3) {
+      flex-basis: 25%;
+      max-width: 25%; }
+    .apartments__details li sup {
+      font-size: 0.625rem; }
+
+.apartments__comment {
+  display: block;
+  font-size: 0.8125rem; }
+
+.apartments__price {
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600; }
+  @media print, screen and (min-width: 40em) {
+    .apartments__price {
+      padding: 0 3.375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments__price {
+      padding: 0 2.5rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .apartments__price {
+      padding: 0 3.375rem; } }
+
+.apartments__button {
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0 0 3px 3px; }
+  .apartments__item_booked .apartments__button {
+    background-color: #a7a37e; }
+  .apartments__item_sold .apartments__button {
+    background-color: #a1a1a1; }
+
+.labels {
+  font-size: 0.75rem; }
+
+.labels__item {
+  display: inline-block;
+  margin-right: 1.0625rem;
+  padding: 0.1875rem;
+  color: #ffffff;
+  background-color: #ff4444;
+  border-radius: 3px;
+  line-height: 1;
+  text-transform: uppercase; }

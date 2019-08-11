@@ -6,10 +6,12 @@
 }
 
 .page-main__header {
-    padding: rem-calc(54 106 35);
+    max-width: rem-calc(1120);
+    margin: 0 auto;
+    padding: rem-calc(54 54 35);
 }
 
 .page-main__body {
-    padding: rem-calc(20 106);
+    padding: rem-calc(20 27);
     background-color: rgba(color(white), .9);
 }
