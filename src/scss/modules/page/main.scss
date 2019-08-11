@@ -18,9 +18,14 @@
 }
 
 .page-main__body {
+    display: flex;
+    flex-direction: column;
+    & > * {
+        flex-basis: 100%;
+    }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
-            padding: rem-calc(20) ($size / 2);
+            padding: rem-calc(20) ($size / 2) rem-calc(74);
         }
     }
     background-color: rgba(color(white), .9);

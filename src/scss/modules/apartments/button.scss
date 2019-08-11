@@ -1,0 +1,15 @@
+.apartments-button {
+    display: block;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            margin: 0 ($size * 6.5);
+        }
+    }
+    font-size: rem-calc(14);
+    padding: rem-calc(30 28 28);
+    background-color: color(blue);
+
+    &:hover {
+        background-color: lighten(color(blue), 10%);
+    }
+}

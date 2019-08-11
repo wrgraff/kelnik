@@ -187,17 +187,21 @@ button {
       padding-right: 3.375rem; } }
 
 .page-main__body {
-  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0.75rem 4.625rem;
   background-color: rgba(255, 255, 255, 0.9); }
+  .page-main__body > * {
+    flex-basis: 100%; }
   @media print, screen and (min-width: 40em) {
     .page-main__body {
-      padding: 1.25rem 1.6875rem; } }
+      padding: 1.25rem 1.6875rem 4.625rem; } }
   @media print, screen and (min-width: 64em) {
     .page-main__body {
-      padding: 1.25rem 1.25rem; } }
+      padding: 1.25rem 1.25rem 4.625rem; } }
   @media screen and (min-width: 72.0625em) {
     .page-main__body {
-      padding: 1.25rem 1.6875rem; } }
+      padding: 1.25rem 1.6875rem 4.625rem; } }
 
 .button {
   position: relative;
@@ -209,6 +213,7 @@ button {
   border-radius: 3px;
   line-height: 1;
   text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 200ms; }
   .button:hover {
@@ -259,6 +264,7 @@ button {
     color: #ff4444; }
 
 .sorting {
+  width: 100%;
   display: flex;
   align-items: baseline;
   max-width: 70rem;
@@ -514,6 +520,24 @@ button {
   .apartments__item_sold .apartments__button:hover {
     background-color: #6e6e6e;
     border-color: #6e6e6e; }
+
+.apartments-button {
+  display: block;
+  margin: 0 9.75rem;
+  font-size: 0.875rem;
+  padding: 1.875rem 1.75rem 1.75rem;
+  background-color: #046380; }
+  @media print, screen and (min-width: 40em) {
+    .apartments-button {
+      margin: 0 21.9375rem; } }
+  @media print, screen and (min-width: 64em) {
+    .apartments-button {
+      margin: 0 16.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .apartments-button {
+      margin: 0 21.9375rem; } }
+  .apartments-button:hover {
+    background-color: #0689b1; }
 
 .labels {
   font-size: 0.75rem; }
