@@ -1,4 +1,5 @@
 .favorite-button {
+    position: relative;
     display: block;
     width: rem-calc(32);
     height: rem-calc(32);
@@ -13,10 +14,30 @@
     cursor: pointer;
     transition: background-color 250ms;
 
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: url(../img/ico/star_solid.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        opacity: 0;
+        transition: opacity 250ms;
+    }
+
     &:hover {
         background-color: color(blue);
     }
     &:active {
         background-color: darken(color(blue), 15%);
+    }
+
+    &[aria-checked="true"] {
+        &:after {
+            opacity: 1;
+        }
     }
 }
