@@ -3,3 +3,4 @@
 
 // Site apps
 //=require app/forms/floatedInputs.js
+//=require app/scrolltop/scrolltop.js

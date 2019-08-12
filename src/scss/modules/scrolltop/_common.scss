@@ -1,0 +1,45 @@
+.scroll-top {
+    position: fixed;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            right: $size;
+            bottom: $size;
+        }
+    }
+    width: rem-calc(80);
+    height: rem-calc(80);
+    background-color: transparent;
+    background-image: url(../img/ico/scroll_top.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: none;
+    border-radius: 50%;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: opacity 250ms, visibility 1ms linear 250ms, bottom 250ms;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+.scroll-top_showed {
+    @include breakpoint(medium) {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 250ms, bottom 250ms, background-color 250ms, transform 150ms;
+    }
+}
+.scroll-top_bottom {
+    background-color: color(white);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            margin-bottom: rem-calc(24) + ($size / 2);
+        }
+    }
+}
