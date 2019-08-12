@@ -40,7 +40,11 @@
 .page-header__menu {
     flex-basis: 0px;
     flex-grow: 2;
-    margin: rem-calc(0 27);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
 }
 
 .page-header__contacts {

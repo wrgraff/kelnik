@@ -1,6 +1,13 @@
 .logo {
     display: block;
     transition: opacity 250ms;
+    @include breakpoint(small down) {
+        width: rem-calc(28);
+    }
+
+    img {
+        max-width: 100%;
+    }
 
     &:hover {
         opacity: .7;

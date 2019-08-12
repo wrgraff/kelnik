@@ -126,6 +126,7 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  min-width: 20rem;
   position: relative; }
   .page-layout::after {
     content: '';
@@ -188,7 +189,16 @@ button {
 .page-header__menu {
   flex-basis: 0px;
   flex-grow: 2;
-  margin: 0 1.6875rem; }
+  padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-header__menu {
+      padding: 0 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-header__menu {
+      padding: 0 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-header__menu {
+      padding: 0 1.65625rem; } }
 
 .page-header__contacts {
   flex-shrink: 0;
@@ -495,6 +505,11 @@ button {
 .logo {
   display: block;
   transition: opacity 250ms; }
+  @media screen and (max-width: 39.9375em) {
+    .logo {
+      width: 1.75rem; } }
+  .logo img {
+    max-width: 100%; }
   .logo:hover {
     opacity: .7; }
 
@@ -564,7 +579,10 @@ button {
   color: #fefefe;
   line-height: 1;
   white-space: nowrap;
-  font-size: 1.75rem; }
+  font-size: 1.25rem; }
+  @media print, screen and (min-width: 40em) {
+    .contacts__phone {
+      font-size: 1.75rem; } }
   @media screen and (min-width: 100em) {
     .contacts__phone {
       font-size: 2rem; } }
@@ -573,11 +591,14 @@ button {
   margin: 0;
   padding: 0;
   color: #fefefe;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition: color 250ms; }
+  @media print, screen and (min-width: 40em) {
+    .contacts__button {
+      font-size: 1.25rem; } }
   .contacts__button:hover {
     color: #ff4444; }
   .contacts__button:active {

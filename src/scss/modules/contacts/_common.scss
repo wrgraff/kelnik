@@ -9,7 +9,10 @@
     line-height: 1;
     white-space: nowrap;
 
-    font-size: rem-calc(28);
+    font-size: rem-calc(20);
+    @include breakpoint(medium) {
+        font-size: rem-calc(28);
+    }
     @include breakpoint(xxlarge) {
         font-size: rem-calc(32);
     }
@@ -19,7 +22,10 @@
     margin: 0;
     padding: 0;
     color: color(light-gray);
-    font-size: rem-calc(20);
+    font-size: rem-calc(18);
+    @include breakpoint(medium) {
+        font-size: rem-calc(20);
+    }
     background-color: transparent;
     border: none;
     cursor: pointer;
