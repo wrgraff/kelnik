@@ -1,22 +1,2 @@
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    font-size: rem-calc(20);
-    @include breakpoint(xxlarge) {
-        font-size: rem-calc(24);
-    }
-}
-
-.menu__item {
-    &:not(:last-child) {
-        margin-right: $bit * 6;
-    }
-}
-
-.menu__link {
-    color: color(light-gray);
-}
+@import "list";
+@import "button";

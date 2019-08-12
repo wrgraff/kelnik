@@ -36,7 +36,7 @@ $checkbox-size: rem-calc(18);
         height: $checkbox-size;
         background-color: color(white);
         border-radius: 2px;
-        transition: background-color 250ms;
+        transition: background-color 250ms, transform 150ms;
     }
 
     &::after {
@@ -53,7 +53,7 @@ $checkbox-size: rem-calc(18);
         background-position: 50% 50%;
         border-radius: 2px;
         opacity: 0;
-        transition: opacity 250ms;
+        transition: opacity 250ms, transform 150ms;
     }
 
     .checkbox:hover & {
@@ -61,6 +61,12 @@ $checkbox-size: rem-calc(18);
 
         &::before {
             background-color: color(medium-gray);
+        }
+    }
+    .checkbox:active & {
+        &::before,
+        &::after {
+            transform: scale(1.15);
         }
     }
     .checkbox__input:focus + & {

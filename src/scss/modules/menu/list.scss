@@ -1,0 +1,38 @@
+.menu {
+    display: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: rem-calc(20);
+    @include breakpoint(large) {
+        display: flex;
+    }
+    @include breakpoint(xxlarge) {
+        font-size: rem-calc(24);
+    }
+
+    @include breakpoint(medium down) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        padding: rem-calc(26);
+        background-color: color(secondary);
+        z-index: 10;
+    }
+}
+
+.menu__item {
+    margin-bottom: rem-calc(16);
+    @include breakpoint(large) {
+        margin-bottom: rem-calc(8);
+    }
+    &:not(:last-child) {
+        margin-right: $bit * 6;
+    }
+}
+
+.menu__link {
+    color: color(light-gray);
+}

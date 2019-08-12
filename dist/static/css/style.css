@@ -115,6 +115,8 @@ a {
   transition: color 250ms; }
   a:hover {
     color: #ff4444; }
+  a:active {
+    color: #f70000; }
 
 button {
   font-size: inherit;
@@ -141,8 +143,11 @@ button {
     display: none; }
 
 .page-header {
+  position: relative;
   padding: 1.3125rem 0 0.875rem;
   background-color: #002f2f; }
+  .page-header :focus {
+    outline-color: rgba(255, 255, 255, 0.3); }
 
 .page-header__container {
   display: flex;
@@ -151,9 +156,34 @@ button {
   max-width: 110rem;
   margin: 0 auto; }
 
+.page-header__button {
+  flex-basis: 6%;
+  padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-header__button {
+      padding: 0 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-header__button {
+      padding: 0 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-header__button {
+      padding: 0 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-header__button {
+      display: none; } }
+
 .page-header__logo {
   flex-basis: 6%;
-  margin: 0 1.6875rem; }
+  padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-header__logo {
+      padding: 0 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-header__logo {
+      padding: 0 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-header__logo {
+      padding: 0 1.65625rem; } }
 
 .page-header__menu {
   flex-basis: 0px;
@@ -161,8 +191,18 @@ button {
   margin: 0 1.6875rem; }
 
 .page-header__contacts {
+  flex-shrink: 0;
   flex-basis: 15.17%;
-  margin: 0 1.6875rem; }
+  padding: 0 0.75rem; }
+  @media print, screen and (min-width: 40em) {
+    .page-header__contacts {
+      padding: 0 1.65625rem; } }
+  @media print, screen and (min-width: 64em) {
+    .page-header__contacts {
+      padding: 0 1.25rem; } }
+  @media screen and (min-width: 72.0625em) {
+    .page-header__contacts {
+      padding: 0 1.65625rem; } }
 
 .page-main {
   flex-grow: 2;
@@ -251,7 +291,9 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 200ms; }
+  transition: background-color 200ms, box-shadow 250ms; }
+  .button:active {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); }
 
 .button {
   background-color: #002f2f; }
@@ -281,6 +323,8 @@ button {
   transition: background-color 250ms; }
   .favorite-button:hover {
     background-color: #046380; }
+  .favorite-button:active {
+    background-color: #022a36; }
 
 .input {
   position: relative;
@@ -405,7 +449,7 @@ button {
     height: 1.125rem;
     background-color: #ffffff;
     border-radius: 2px;
-    transition: background-color 250ms; }
+    transition: background-color 250ms, transform 150ms; }
   .checkbox__text::after {
     content: '';
     position: absolute;
@@ -420,11 +464,13 @@ button {
     background-position: 50% 50%;
     border-radius: 2px;
     opacity: 0;
-    transition: opacity 250ms; }
+    transition: opacity 250ms, transform 150ms; }
   .checkbox:hover .checkbox__text {
     color: #d6d6d6; }
     .checkbox:hover .checkbox__text::before {
       background-color: #d6d6d6; }
+  .checkbox:active .checkbox__text::before, .checkbox:active .checkbox__text::after {
+    transform: scale(1.15); }
   .checkbox__input:focus + .checkbox__text::before {
     outline-width: 2px;
     outline-style: solid;
@@ -453,27 +499,71 @@ button {
     opacity: .7; }
 
 .menu {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 1.25rem; }
+  @media print, screen and (min-width: 64em) {
+    .menu {
+      display: flex; } }
   @media screen and (min-width: 100em) {
     .menu {
       font-size: 1.5rem; } }
+  @media screen and (max-width: 63.9375em) {
+    .menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 1.625rem;
+      background-color: #a7a37e;
+      z-index: 10; } }
 
-.menu__item:not(:last-child) {
-  margin-right: 3rem; }
+.menu__item {
+  margin-bottom: 1rem; }
+  @media print, screen and (min-width: 64em) {
+    .menu__item {
+      margin-bottom: 0.5rem; } }
+  .menu__item:not(:last-child) {
+    margin-right: 3rem; }
 
 .menu__link {
   color: #fefefe; }
+
+.menu-button {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 250ms; }
+  .menu-button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 2rem;
+    height: 0.125rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem #ffffff, 0 -0.5rem #ffffff;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 250ms; }
+  .menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
+  .menu-button:active::after, .menu-button:focus::after {
+    box-shadow: 0 0.6875rem #ffffff, 0 -0.6875rem #ffffff; }
 
 .contacts__phone {
   display: inline-block;
   margin-bottom: 0.25rem;
   color: #fefefe;
   line-height: 1;
+  white-space: nowrap;
   font-size: 1.75rem; }
   @media screen and (min-width: 100em) {
     .contacts__phone {
@@ -486,9 +576,12 @@ button {
   font-size: 1.25rem;
   background-color: transparent;
   border: none;
+  cursor: pointer;
   transition: color 250ms; }
   .contacts__button:hover {
     color: #ff4444; }
+  .contacts__button:active {
+    color: #f70000; }
 
 .sorting {
   width: 100%;
@@ -549,6 +642,8 @@ button {
     border-radius: 50%; }
   .sorting__button:hover {
     color: #ff4444; }
+  .sorting__button:active {
+    color: #f70000; }
 
 .apartments {
   display: flex;

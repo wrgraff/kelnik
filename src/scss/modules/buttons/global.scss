@@ -9,5 +9,9 @@
     text-transform: uppercase;
     font-weight: font-weight(semibold);
     cursor: pointer;
-    transition: background-color 200ms;
+    transition: background-color 200ms, box-shadow 250ms;
+
+    &:active {
+        box-shadow: 0 4px 12px rgba(#000, .25);
+    }
 }

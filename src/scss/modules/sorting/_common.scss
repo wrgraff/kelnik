@@ -62,4 +62,7 @@
     &:hover {
         color: color(alert);
     }
+    &:active {
+        color: darken(color(alert), 15%);
+    }
 }

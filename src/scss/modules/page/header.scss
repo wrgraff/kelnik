@@ -1,6 +1,11 @@
 .page-header {
+    position: relative;
     padding: rem-calc(21 0 14);
     background-color: color(primary);
+
+    :focus {
+        outline-color: rgba(color(white), .3);
+    }
 }
 
 .page-header__container {
@@ -11,9 +16,25 @@
     margin: 0 auto;
 }
 
+.page-header__button {
+    flex-basis: 6%;
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
+    @include breakpoint(large) {
+        display: none;
+    }
+}
+
 .page-header__logo {
     flex-basis: 6%;
-    margin: rem-calc(0 27);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
 }
 
 .page-header__menu {
@@ -23,6 +44,11 @@
 }
 
 .page-header__contacts {
+    flex-shrink: 0;
     flex-basis: 15.17%;
-    margin: rem-calc(0 27);
+    @each $name, $size in $global-gaps {
+        @include breakpoint($name) {
+            padding: 0 ($size / 2);
+        }
+    }
 }
