@@ -30,6 +30,7 @@
 
 .page-header__logo {
     flex-basis: 6%;
+    flex-shrink: 0;
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
             padding: 0 ($size / 2);
