@@ -353,9 +353,6 @@ button {
   cursor: text; }
   .input__field:focus + .input__text {
     color: #002f2f; }
-  .input__field_status_valid + .input__text,
-  .input__field_status_valid:focus + .input__text {
-    color: #a7a37e; }
   .input__field_status_invalid + .input__text,
   .input__field_status_invalid:focus + .input__text {
     color: #ff4444; }
@@ -374,12 +371,15 @@ button {
 .input__field {
   order: 2;
   width: 100%;
-  padding: 0.875rem 1.25rem 0.9375rem;
+  padding: 0.875rem 2.125rem 0.9375rem 1.25rem;
   border: none;
   border-radius: 2px;
   font-size: 1.125rem;
   line-height: 1;
-  transition: border-color 250ms, box-shadow 250ms; }
+  background-image: url(../img/ico/check_green.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 1.875rem) 50%;
+  transition: border-color 250ms, box-shadow 250ms, background-position 250ms; }
   .input__field:invalid {
     outline: none;
     box-shadow: none; }
@@ -395,33 +395,25 @@ button {
     box-shadow: shadow(1-lvl); }
 
 .input__field_status_valid {
-  border-color: #a7a37e; }
-  .input__field_status_valid:focus {
-    border-color: #a7a37e; }
-  .input__field_status_valid:hover {
-    border-color: #726e4d; }
-
-.input__field_status_invalid {
-  border-color: #ff4444; }
-  .input__field_status_invalid:focus {
-    border-color: #ff4444; }
-  .input__field_status_invalid:hover {
-    border-color: #dd0000; }
+  background-position: calc(100% - 0.75rem) 50%; }
 
 .input__error {
   order: 3;
   display: inline-block;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  color: #d6d6d6;
-  font-size: font-size(small);
+  padding: 0.5rem;
+  font-size: 0.75rem;
   line-height: 1;
   transition: opacity 250ms, transform 250ms;
   position: absolute;
-  top: 3.5rem;
-  color: #a7a37e;
-  background-color: #ffffff;
+  top: 100%;
+  left: 0.5rem;
+  right: 0.5rem;
+  margin-top: -0.25rem;
+  color: #ffffff;
+  background-color: #FF5252;
+  border-radius: 3px;
+  text-align: center;
   opacity: 0;
-  transform: translateY(1.5rem);
   z-index: 3; }
   .input__field_status_invalid ~ .input__error {
     opacity: 1;

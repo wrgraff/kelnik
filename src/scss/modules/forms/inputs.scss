@@ -22,10 +22,6 @@ $input-field-darken: 20%;
     .input__field:focus + & {
         color: $input-field-color-focus;
     }
-    .input__field_status_valid + &,
-    .input__field_status_valid:focus + & {
-        color: $input-field-color-success;
-    }
     .input__field_status_invalid + &,
     .input__field_status_invalid:focus + & {
         color: $input-field-color-error;
@@ -49,12 +45,15 @@ $input-field-darken: 20%;
 .input__field {
     order: 2;
     width: 100%;
-    padding: rem-calc(14 20 15);
+    padding: rem-calc(14 34 15 20);
     border: none;
     border-radius: 2px;
     font-size: rem-calc(18);
     line-height: 1;
-    transition: border-color 250ms, box-shadow 250ms;
+    background-image: url(../img/ico/check_green.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% + #{rem-calc(30)}) 50%;
+    transition: border-color 250ms, box-shadow 250ms, background-position 250ms;
 
     &:invalid {
         outline: none;
@@ -76,39 +75,25 @@ $input-field-darken: 20%;
     }
 }
 .input__field_status_valid {
-    border-color: $input-field-color-success;
-
-    &:focus {
-        border-color: $input-field-color-success;
-    }
-    &:hover {
-        border-color: darken($input-field-color-success, $input-field-darken);
-    }
-}
-.input__field_status_invalid {
-    border-color: $input-field-color-error;
-
-    &:focus {
-        border-color: $input-field-color-error;
-    }
-    &:hover {
-        border-color: darken($input-field-color-error, $input-field-darken);
-    }
+    background-position: calc(100% - #{rem-calc(12)}) 50%;
 }
 .input__error {
     order: 3;
     display: inline-block;
-    padding: $bit $bit $bit ($bit * 2);
-    color: color(medium-gray);
-    font-size: font-size(small);
+    padding: $bit;
+    font-size: rem-calc(12);
     line-height: 1;
     transition: opacity 250ms, transform 250ms;
     position: absolute;
-    top: rem-calc(56);
-    color: color(secondary);
-    background-color: color(white);
+    top: 100%;
+    left: $bit;
+    right: $bit;
+    margin-top: $bit / -2;
+    color: color(white);
+    background-color: #FF5252;
+    border-radius: $radius;
+    text-align: center;
     opacity: 0;
-    transform: translateY(rem-calc(24));
     z-index: 3;
 
     .input__field_status_invalid ~ & {

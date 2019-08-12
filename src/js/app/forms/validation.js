@@ -5,8 +5,6 @@ var validationForms = document.querySelectorAll('[data-validate]');
 // Validation RegExp patterns
 var validationPatterns = {
     email: /.+@.+\..+/i,
-    phone: /^[0-9-+() ]*$/,
-    text: /^[A-Za-zА-Яа-я0-9_-]*$/
 };
 
 // Adding error message
@@ -34,76 +32,16 @@ var checkPattern = function(input) {
 
     // console.log('Pattern is ' + inputPattern.test(inputValue));
     if (!inputPattern.test(inputValue)) {
-        addError(input, 'Использованы недопустимые символы');
+        addError(input, 'Поле заполнено неверно');
     }
     return inputPattern.test(inputValue);
-};
-// Check input length
-var checkLength = function(input) {
-    if (!input.dataset.validateLength || (input.value == '')) { return true };
-
-    var inputSize = input.dataset.validateLength,
-        inputLength = input.value.length;
-    if (inputSize.includes('-')) {
-        var inputSizeRanges = inputSize.split('-');
-        // console.log('Input length is range from ' + inputSizeRanges[0] + ' to ' + inputSizeRanges[1]);
-
-        if ((inputLength >= inputSizeRanges[0]) && (inputLength <= inputSizeRanges[1])) {
-            // console.log('Input length in range from ' + inputSizeRanges[0] + ' to ' + inputSizeRanges[1]);
-            return true;
-        };
-        if (inputLength < inputSizeRanges[0]) {
-            addError(input, 'Значение слишком короткое. Минимальное количество символов: ' + inputSizeRanges[0]);
-        } else if (inputLength > inputSizeRanges[1]) {
-            addError(input, 'Значение слишком длинное. Максимальное количество символов: ' + inputSizeRanges[1]);
-        };
-        return false;
-    };
-
-    if (inputLength >= inputSize) {
-        // console.log('Input length more than ' + inputSize);
-        return true;
-    };
-    // console.log('Input length less than ' + inputSize);
-    addError(input, 'Значение слишком короткое. Минимальное количество символов: ' + inputSize);
-    return false;
-};
-// Check input range
-var checkRange = function(input) {
-    if (!input.dataset.validateRange || (input.value == '')) { return true };
-
-    var inputRange = input.dataset.validateRange,
-        inputValue = parseInt(input.value);
-    if (inputRange.includes('-')) {
-        var inputRangeRanges = inputRange.split('-');
-        // console.log('Input range from ' + inputRangeRanges[0] + ' to ' + inputRangeRanges[1]);
-
-        if ((inputValue >= inputRangeRanges[0]) && (inputValue <= inputRangeRanges[1])) {
-            // console.log('Input value from ' + inputRangeRanges[0] + ' to ' + inputRangeRanges[1]);
-            return true;
-        };
-        if (inputValue < inputRangeRanges[0]) {
-            addError(input, 'Значение слишком маленькое. Минимальное значение: ' + inputRangeRanges[0]);
-        } else if (inputValue > inputRangeRanges[1]) {
-            addError(input, 'Значение слишком большое. Максимальное значение: ' + inputRangeRanges[1]);
-        };
-        return false;
-    };
-
-    if (inputValue >= inputRange) {
-        // console.log('Input range more than ' + inputRange);
-        return true;
-    };
-    // console.log('Input range less than ' + inputRange);
-    addError(input, 'Значение слишком маленькое. Минимальное значение: ' + inputRange);
-    return false;
 };
 
 // Validate input
 var validateInput = function(input, isHardCheck) {
     // console.log('input on check');
     // Check all validate parameters
-    var isInputValid = checkRequired(input) && checkPattern(input) && checkLength(input) && checkRange(input),
+    var isInputValid = checkRequired(input) && checkPattern(input),
         isNotEmpty = input.value || false;
 
     // Adding classes to inputs
