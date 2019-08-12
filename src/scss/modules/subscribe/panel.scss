@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
-            padding: $size / 2;
+            padding: ($size / 2) ($size / 2) ($size / 2 - rem-calc(6));
         }
     }
     color: color(white);
@@ -43,7 +43,7 @@
 .subscribe__title {
     margin-bottom: rem-calc(8);
     font-size: rem-calc(34);
-    line-height: 1.1;
+    line-height: 1;
     font-weight: font-weight(semibold);
 }
 

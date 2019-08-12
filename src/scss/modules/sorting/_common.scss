@@ -3,7 +3,7 @@
     display: flex;
     align-items: baseline;
     max-width: rem-calc(1120);
-    margin: 0 auto rem-calc(40);
+    margin: 0 auto rem-calc(44);
     font-size: rem-calc(14);
 
     @each $name, $size in $global-gaps {
@@ -19,7 +19,7 @@
 }
 
 .sorting__title {
-    margin-right: rem-calc(12);
+    margin-right: rem-calc(10);
     color: rgba(color(primary), .7);
 
     @include breakpoint(small down) {
@@ -33,7 +33,7 @@
 
 .sorting__button {
     position: relative;
-    margin-right: rem-calc(45);
+    margin-right: rem-calc(38);
     padding: 0;
     color: color(primary);
     background-color: transparent;
@@ -51,7 +51,7 @@
         display: block;
         width: rem-calc(18);
         height: rem-calc(18);
-        margin-left: rem-calc(8);
+        margin-left: rem-calc(10);
         background-color: rgba(color(blue), .04);
         background-image: url(../img/ico/chevron_up.svg);
         background-repeat: no-repeat;

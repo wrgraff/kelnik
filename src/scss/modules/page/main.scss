@@ -30,7 +30,7 @@
     }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
-            padding: rem-calc(20) ($size / 2) (rem-calc(21) + $size);
+            padding: rem-calc(28) ($size / 2) (rem-calc(6) + $size);
         }
     }
     background-color: rgba(color(white), .9);
