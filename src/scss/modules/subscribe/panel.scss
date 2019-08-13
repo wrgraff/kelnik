@@ -15,6 +15,7 @@
     flex-basis: 100%;
     @include breakpoint(large) {
         flex-basis: 43.5%;
+        max-width: 43.5%;
     }
     @include breakpoint(small down) {
         margin-bottom: rem-calc(32);
@@ -29,6 +30,7 @@
     flex-basis: 100%;
     @include breakpoint(large) {
         flex-basis: 56.5%;
+        max-width: 56.5%;
     }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {

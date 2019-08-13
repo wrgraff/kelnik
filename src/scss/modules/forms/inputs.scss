@@ -12,10 +12,14 @@ $input-field-darken: 20%;
 }
 .input__text {
     order: 1;
+    position: absolute;
+    top: 50%;
+    left: rem-calc(20);
     display: block;
     color: $input-field-color;
     line-height: 1;
     transform-origin: left top;
+    transform: translateY(calc(-50% - #{rem-calc(44)}));
     transition: transform 250ms, color 250ms;
     cursor: text;
 
@@ -28,9 +32,6 @@ $input-field-darken: 20%;
     }
 
     .input_floating & {
-        position: absolute;
-        top: 50%;
-        left: rem-calc(20);
         transform: translateY(-50%);
     }
     .input_floating .input__field:focus + & {
