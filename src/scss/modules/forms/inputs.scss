@@ -1,4 +1,4 @@
-$input-field-color: color(dark-gray);
+$input-field-color: color(white);
 $input-field-color-focus: color(primary);
 $input-field-color-success: color(secondary);
 $input-field-color-error: color(alert);
@@ -32,6 +32,7 @@ $input-field-darken: 20%;
     }
 
     .input_floating & {
+        color: color(blue);
         transform: translateY(-50%);
     }
     .input_floating .input__field:focus + & {
