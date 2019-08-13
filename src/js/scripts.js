@@ -8,3 +8,4 @@
 //=require app/forms/validation.js
 //=require app/scrolltop/scrolltop.js
 //=require app/controls/switches.js
+//=require app/menu/mobileToggler.js
