@@ -32,6 +32,7 @@ function showAlert(text) {
 
 const ApartmentsContainer = document.querySelector('.apartments');
 const ApartmentsButton = document.querySelector('.apartments-button');
+const SortButtons = document.querySelectorAll('[data-sort]');
 getApartments('/apartments.json');
 
 function getApartments(url) {
@@ -40,10 +41,19 @@ function getApartments(url) {
         return response.json();
     })
     .then(function(json) {
-        // return json;
-
         let loadedItems = 0;
         addFromList(json, loadedItems, loadedItems += 11);
+
+        // Sorting working with json and reload apartments with new order
+        SortButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                toggleSortClasses(SortButtons, e.target);
+                sortList(json, button.dataset.sort);
+                ApartmentsContainer.innerHTML = '';
+                addFromList(json, 0, loadedItems);
+            });
+        });
+
         ApartmentsButton.addEventListener('click', () => {
             if (loadedItems + 21 < json.length) {
                 addFromList(json, loadedItems += 1, loadedItems += 21);
@@ -52,10 +62,33 @@ function getApartments(url) {
                 ApartmentsButton.remove();
             };
 
+            // If items less than 20 we can correct button text
             if ((json.length - 1 - loadedItems) < 20) {
                 ApartmentsButton.textContent = 'Показать еще ' + (json.length - 1 - loadedItems);
             };
         });
+    });
+};
+
+function sortList(list, param) {
+    list.sort((a, b) => {
+        if (a[param] > b[param]) {
+            return 1;
+        }
+        if (a[param] < b[param]) {
+            return -1;
+        }
+        return 0;
+    });
+};
+
+function toggleSortClasses(buttons, activeButton) {
+    buttons.forEach(button => {
+        if (button === activeButton) {
+            button.classList.add('sorting__button_active');
+        } else {
+            button.classList.remove('sorting__button_active');
+        };
     });
 };
 
