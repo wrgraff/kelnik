@@ -1,5 +1,4 @@
 .apartments-button {
-    display: block;
     @each $name, $size in $global-gaps {
         @if (($name == large) or ($name == xlarge) or ($name == xxlarge)) {
             @include breakpoint($name) {
@@ -11,11 +10,16 @@
             }
         }
     }
-    font-size: rem-calc(14);
-    padding: rem-calc(30 28 28);
-    background-color: color(blue);
 
-    &:hover {
-        background-color: lighten(color(blue), 10%);
+    .button {
+        display: block;
+        width: 100%;
+        font-size: rem-calc(14);
+        padding: rem-calc(30 28 28);
+        background-color: color(blue);
+
+        &:hover {
+            background-color: lighten(color(blue), 10%);
+        }
     }
 }

@@ -31,7 +31,7 @@ function showAlert(text) {
 };
 
 const ApartmentsContainer = document.querySelector('.apartments');
-const ApartmentsButton = document.querySelector('.apartments-button');
+const ApartmentsButton = document.querySelector('.apartments-button .button');
 const SortButtons = document.querySelectorAll('[data-sort]');
 getApartments('/apartments.json');
 

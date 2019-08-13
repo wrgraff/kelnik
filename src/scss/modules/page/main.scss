@@ -23,11 +23,6 @@
 }
 
 .page-main__body {
-    display: flex;
-    flex-direction: column;
-    & > * {
-        flex-basis: 100%;
-    }
     @each $name, $size in $global-gaps {
         @include breakpoint($name) {
             padding: rem-calc(28) ($size / 2) (rem-calc(6) + $size);
