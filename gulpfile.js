@@ -14,7 +14,7 @@ gulp.task('sass', function () {
         .pipe(autoprefixer({
             cascade: false
         }))
-        // .pipe(cssmin())
+        .pipe(cssmin())
         .pipe(gulp.dest('dist/static/css'))
         .pipe(livereload());
 });
@@ -24,7 +24,7 @@ gulp.task('html', function () {
 gulp.task('js', function() {
     return gulp.src('src/js/scripts.js')
         .pipe(include())
-        .pipe(uglify())
+        // .pipe(uglify())
         .on('error', console.log)
         .pipe(gulp.dest('dist/static/js'))
         .pipe(livereload());

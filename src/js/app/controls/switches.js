@@ -1,12 +1,3 @@
-findSwitches('.favorite-button');
-
-function findSwitches(selector) {
-    const switches = document.querySelectorAll(selector);
-    switches.forEach((switchButton) => {
-        listenSwitch(switchButton);
-    });
-};
-
 function listenSwitch(switchButton) {
     switchButton.addEventListener('click', (e) => {
         let pressed = e.target.getAttribute('aria-checked') === 'true';
